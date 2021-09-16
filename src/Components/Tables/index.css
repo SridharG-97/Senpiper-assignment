@@ -1,0 +1,71 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   flex: 1;
+   height: 100vh;
+   padding: 50px;
+ 
+}
+.card1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   flex: 1;
+   background: #F5F5F5 0% 0% no-repeat padding-box; 
+   border: 0.5px solid rgb(219, 217, 217);
+  
+}
+
+.sub-title{ 
+text-align: left;
+padding-top: 2px;
+padding-left: 2px;
+height: 9%;
+background:chocolate;
+font-size: 15px;
+ background: #F5F5F5 0% 0% no-repeat padding-box; 
+opacity: 1;
+
+}
+.sub-title>h4{
+    
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 25px;
+}
+
+.card-table{
+  
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    background: #F5F5F5 0% 0% no-repeat padding-box; 
+    opacity: 1;
+    height: 30vh;
+ 
+  padding: 25px;
+
+}
+.data-table{
+   width: 50%;
+   height: 50vh;
+   align-items: flex-start;
+   justify-content: flex-start;
+   box-shadow: 0px 0px 5px #B5B5B5;
+   background: #FFFFFF 0% 0% no-repeat padding-box;
+
+   
+}
+.table-header{
+    background: #e9deff 0% 0% no-repeat padding-box;
+   font-size: 15px;
+   font-weight: normal;
+   border: 0.5px solid #C5C5C5;
+   
+ 
+}
+
+
+
