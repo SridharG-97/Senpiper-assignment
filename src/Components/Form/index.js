@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import "./index.css";
-import { Form, Button, Col, Row, FormCheck, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form, Button, Row } from "react-bootstrap";
 import Navbar from "../Navbar/index";
-import { MDBIcon } from 'mdb-react-ui-kit';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+
 function Index() {
 
-    
+
     const [text, setText] = useState('');
     const [email, setEmail] = useState('');
     const [mobile, setMobile] = useState('');
@@ -15,22 +16,10 @@ function Index() {
 
     const [name, setName] = useState('');
     const [formName, setformName] = useState('Aromatic Bar');
-    
+
 
 
     const handle = (e) => {
-
-        // localStorage.setItem('Name', name);
-
-        // localStorage.setItem('email', email);
-
-        // localStorage.setItem('mobile', mobile);
-        // localStorage.setItem('text', text);
-        // localStorage.setItem('radio', radio);
-
-
-
-
 
         let array = [];
         let checkData = localStorage.getItem('Values5')
@@ -38,19 +27,17 @@ function Index() {
         let parsedData = [];
         console.log(parsedData);
 
-        
-
         if (checkData == null) {
             parsedData = [];
-        }  else {
-            
-            
+        } else {
+
+
             parsedData = JSON.parse(checkData);
-           
+
         }
 
-      
-        if(name && email && mobile && text && radio){
+
+        if (name && email && mobile && text && radio) {
             const json = {
                 Name: name,
                 email: email,
@@ -58,16 +45,13 @@ function Index() {
                 text: text,
                 radio: radio,
                 formName: formName,
-    
+
             }
-    
+
             parsedData.push(json)
             localStorage.setItem('Values5', JSON.stringify(parsedData));
 
         }
-
-        
-        
     };
 
 
@@ -98,7 +82,7 @@ function Index() {
                         <div className="Field1">
                             <Form.Group className=" Text-form mb-3" controlId="formBasicEmail">
                                 <Form.Label className="label-Text" >Text field</Form.Label>
-                                <Form.Control className="Text-input" type="comments" required placeholder="Hello" onChange={(e) => setText(e.target.value)} />
+                                <Form.Control className="Text-input" type="comments" required placeholder="Hello" onChange={(e) => setText(e.target.value)}  />
 
                             </Form.Group>
 
@@ -110,12 +94,21 @@ function Index() {
 
                         <div className="Field2">
                             <Form.Group className=" Text-form mb-3" controlId="formBasicEmail">
+
                                 <Form.Label className="label-Text" >Phone</Form.Label>
-                                <Form.Control className="Text-input" type="number" required placeholder="123456789" onChange={(e) => setMobile(e.target.value)} onInput={(e) => {
-                                    e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 10)
-                                }} /><MDBIcon flag='india' />
 
 
+                                <PhoneInput
+
+                                    style={{ width: "70%",  backgroundColor: " #FFFFFF 0% 0% no-repeat padding-box", borderRadius: "5px" }}
+                                    country={'in'}
+                                    inputProps={{
+                                        country: 'us',
+                                        name: 'phone',
+                                        required: true,
+                                       
+                                        className: "Text-input"
+                                    }} />
                             </Form.Group>
 
 
@@ -125,7 +118,7 @@ function Index() {
                                 <Row className="radio-button" sm={4} required  >
                                     <Form.Check
                                         type="radio"
-                                        
+
                                         label="Excellent"
                                         name="formHorizontalRadios"
                                         id="formHorizontalRadios1"
@@ -183,21 +176,9 @@ function Index() {
 
                     </Form>
 
-
-
-
-
-
-
                 </div>
 
             </div>
-
-
-
-
-
-
 
         </div>
     )
