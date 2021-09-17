@@ -1,3 +1,36 @@
-.Nav{
+.link{
     background: #FFFFFF 0% 0% no-repeat padding-box;
+    
+    width: 100%;
 }
+
+ 
+  
+  .navbar__link {
+    height:4vh;
+    width: 5%;
+    margin-right: 5em;
+    font-size: 12px;
+    
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: .3em;
+    text-indent: .3em;
+    color: #181818;
+    border-bottom: 3px solid transparent;
+    text-align: center;
+  }
+  
+  .navbar__link:hover {
+    /* transform: translatex(-2px); */
+    color: #181818;
+  }
+  
+  .navbar__link--active {
+    border-bottom: 3px solid #8870C9;
+    transition: border-bottom .5s ease-in-out;
+    color: #8870C9;
+ 
+  }
+
+  
