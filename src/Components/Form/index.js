@@ -22,7 +22,7 @@ function Index() {
     const handle = (e) => {
 
         let array = [];
-        let checkData = localStorage.getItem('Values5')
+        let checkData = localStorage.getItem('FieldData')
         console.log(checkData);
         let parsedData = [];
         console.log(parsedData);
@@ -37,23 +37,23 @@ function Index() {
         }
 
 
-        if (name && email && mobile && text && radio) {
-            const json = {
-                Name: name,
-                email: email,
-                mobile: mobile,
-                text: text,
-                radio: radio,
-                formName: formName,
-
-            }
-
-            parsedData.push(json)
-            localStorage.setItem('Values5', JSON.stringify(parsedData));
+        const json = {
+            Name: name,
+            email: email,
+            mobile: mobile,
+            text: text,
+            radio: radio,
+            formName: formName,
 
         }
-    };
+      console.log(json);
 
+        parsedData.push(json)
+        localStorage.setItem('FieldData', JSON.stringify(parsedData));
+
+    }
+
+     
 
 
 

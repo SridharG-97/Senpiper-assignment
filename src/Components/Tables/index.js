@@ -14,7 +14,7 @@ function Index(id) {
   const [state, setState] = useState([])
 
   useEffect(() => {
-    let checkData = localStorage.getItem('Values5')
+    let checkData = localStorage.getItem('FieldData')
     if (checkData == null) {
       parsedData = [];
       setState([])
